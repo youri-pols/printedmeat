@@ -1,12 +1,214 @@
+@import "reset", "variables", "mixins", "spacing", "typography";
+
+// ANCHOR General
 body {
-    height: 100vh;
+    ::selection {
+        background-color: $black;
+        color: $white;
+    }
+    font-family: "HelveticaNeue";
 }
 
-#gradient-canvas {
-    width: 100%;
-    height: 100%;
-    --gradient-color-1: #5f923c;
-    --gradient-color-2: #76b946;
-    --gradient-color-3: #8cd756;
-    --gradient-color-4: #a8fe6a;
+.container {
+    padding-left: 135px;
+    padding-right: 135px;
+    width: min(100%, 1440px - 160px);
+    max-width: unset;
+    margin-inline: 80px;
+    @include mx(992px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.container-fluid {
+    padding-left: 135px;
+    padding-right: 135px;
+    @include mx(992px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+[class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+main {
+    a {
+        text-decoration: underline;
+        font-weight: 600;
+        &:hover {
+            text-decoration-color: transparent;
+        }
+    }
+}
+
+// ANCHOR Spacer
+spacer {
+    display: block;
+    padding-top: 60px;
+    @include mq(992px) {
+        padding-top: 120px;
+    }
+}
+
+p:last-child,
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+// ANCHOR Buttons
+.btn {
+    @include btn;
+    border: none;
+    &.btn-nav {
+        padding: 16px 22px;
+        background-color: $black--light;
+        color: $white;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 16px;
+        border-radius: 10px;
+        &:hover {
+            background-color: $grey;
+            color: $white;
+        }
+    }
+    &.btn-beige {
+        padding: 16px 22px;
+        box-shadow: -1px 2px 12px $grey--light;
+        background-color: $beige;
+        color: $green;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        border-radius: 10px;
+        &:hover {
+            background-color: $black--light;
+            color: $white;
+        }
+    }
+    &.btn-white {
+        background: $white;
+        box-shadow: -1px 2px 12px $grey--light;
+        border-radius: 10px;
+        padding: 16px 22px;
+        color: $green;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            background-color: $black--light;
+            color: $white;
+        }
+    }
+}
+
+// ANCHOR Navigation
+.navigation {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: all 0.3s ease;
+    &.scrolled-up {
+        transform: translateY(0);
+        transition: all 0.3s ease;
+    }
+    &.scrolled-down {
+        transform: translateY(-100%);
+        transition: all 0.3s ease;
+    }
+    nav {
+        padding: 0 !important;
+        .navbar-toggler {
+            outline: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='18' viewBox='0 0 24 18' fill='none'%3E%3Cpath d='M1 17H23Z' fill='black'/%3E%3Cpath d='M1 1H23M1 9H23M1 17H23' stroke='black' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E");
+                width: 24px;
+                height: 18px;
+            }
+        }
+        .navbar-brand {
+            padding: 0;
+            max-width: 60%;
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        ul {
+            align-items: center;
+            > li {
+                margin-right: 25px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    text-decoration: underline;
+                    text-decoration-color: transparent;
+                    text-decoration-thickness: 3px;
+                    text-underline-offset: 5px;
+                    transition: 0.3s ease-in-out all;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $white;
+                    &:hover {
+                        text-decoration-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ANCHOR Header
+.header {
+    background: url(../images/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .container-fluid {
+        padding-top: 180px;
+        padding-bottom: 95px;
+        z-index: 2;
+        position: relative;
+        h1,
+        p {
+            color: $white;
+        }
+        p {
+            font-weight: 500;
+            line-height: 28px;
+            font-size: 18px;
+        }
+        .btns {
+            display: flex;
+            flex-direction: row;
+            .btn {
+                &:first-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    &:before {
+        content: "";
+        background: linear-gradient(107.11deg, rgba(57, 74, 43, 0.7) 49.87%, rgba(105, 157, 67, 0.47) 119.95%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 1;
+    }
 }

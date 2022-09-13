@@ -1,0 +1,64 @@
+@import "mixins";
+
+h1,
+.h1 {
+    font-size: 55px;
+    line-height: 65px;
+    font-weight: 700;
+    @include mq(992px) {
+        font-size: 55px;
+        line-height: 65px;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 48px;
+    line-height: 50px;
+    font-weight: 700;
+    @include mq(992px) {
+        font-size: 48px;
+        line-height: 50px;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 42px;
+    line-height: 44px;
+    font-weight: 700;
+    @include mq(992px) {
+        font-size: 42px;
+        line-height: 44px;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 1.5625rem;
+    line-height: 1.9375rem;
+    @include mq(992px) {
+        // font-size: rem;
+        // line-height: rem;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    @include mq(992px) {
+        // font-size: rem;
+        // line-height: rem;
+    }
+}
+
+h6,
+.h6 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    @include mq(992px) {
+        // font-size: rem;
+        // line-height: rem;
+    }
+}
