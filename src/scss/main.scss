@@ -7,6 +7,7 @@ body {
         color: $white;
     }
     color: $black;
+    font-family: "Helvetica Neue";
 }
 
 .container {
@@ -255,7 +256,7 @@ p:last-of-type {
         .single-product {
             padding-top: 100px;
             p {
-                font-weight: 400;
+                font-weight: normal;
                 font-size: 16px;
                 line-height: 26px;
             }
@@ -274,5 +275,15 @@ p:last-of-type {
                 }
             }
         }
+    }
+}
+
+// ANCHOR Story
+.story {
+    h3 {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 50px;
+        color: $green;
     }
 }
