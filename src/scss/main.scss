@@ -287,3 +287,49 @@ p:last-of-type {
         color: $green;
     }
 }
+
+// ANCHOR Map
+.map {
+    .gps {
+        display: flex;
+        align-items: center;
+        padding: 25px 15px;
+        background-color: $green--light;
+        border-radius: 5px;
+        span {
+            margin-left: 15px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+    .locations {
+        background-color: $green--light;
+        border-radius: 5px;
+        padding: 13px;
+        height: 420px;
+        overflow-y: scroll;
+        .location {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $grey--lights;
+            &:last-child {
+                border-bottom: none;
+            }
+            &:first-child {
+                padding-top: 0px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin-top: 15px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    iframe {
+        height: 420px;
+        width: 100%;
+        border-radius: 5px;
+    }
+}
