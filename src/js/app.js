@@ -34,3 +34,8 @@ function counter() {
 }
 
 counter();
+
+$(".socials a").hover(function () {
+    $(this).removeClass("inactive");
+    $(this).siblings().toggleClass("inactive");
+});
